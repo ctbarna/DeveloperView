@@ -1,0 +1,41 @@
+body { margin: 0; padding: 0; font-family:  	 Helvetica, Helvetica Neue, Arial}
+#header { width:100%; background: #0F2A96;}
+#header h1 {margin:0px; padding: 5px 50px 5px 50px;}
+#header {color: white;}
+#header a, #header a:visited {color:white; text-decoration: none;}
+#header a:hover {text-decoration: underline;}
+#content {padding: 50px; }
+.step {font-weight:bold; padding-bottom:5px}
+
+.form-row {clear:both; width: 100%; padding: 10px 0px 10px 0px; float:left;}
+.form-label {float:left; width: 250px; text-align: right; padding-right: 50px;}
+.form-field {float:left; width: 350px; }
+
+.instructions{font-size:10pt; color:#aaa;}
+
+#logout {float: right; font-size: 10px; margin-right:20px;}
+#logout a, #logout a:visited {color: #0F2A96;}
+
+#completion-results, #progress-loader {padding-top: 20px;} 
+
+label {font-weight: bold; }
+
+.result-row {color:#696969;}
+
+.result-row .value {font-weight: bold; size: 24px; color:#000;}
+
+.complete { text-align: center; padding:10px; width:300px; float: left;}
+.complete .number {font-size: 100px;}
+.complete .percent {font-size:25px; font-weight:bold;}
+.complete .red {color:red;}
+.complete .yellow {color: yellow}
+.complete .green{ color:green}
+.complete .oragen {color: orange}
+
+.progress-bar {float:left; border: 1px solid black; padding: 5px; width:300px; margin-left: 50px; margin-top: 35px; }
+.percent-complete {height:50px;}
+
+.clearfix:after { content: ".";	display: block;	clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix {height: 1%;}

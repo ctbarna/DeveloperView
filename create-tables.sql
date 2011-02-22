@@ -1,0 +1,85 @@
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+CREATE TABLE IF NOT EXISTS `exclusions` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `URL` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+CREATE TABLE IF NOT EXISTS `meta` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `PageID` int(10) NOT NULL,
+  `SourceID` int(10) NOT NULL,
+  `Key` varchar(128) NOT NULL,
+  `Value` text NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `PageID` (`PageID`),
+  KEY `SourceID` (`SourceID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+CREATE TABLE IF NOT EXISTS `notes` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `PageID` int(10) NOT NULL,
+  `UserID` int(10) NOT NULL,
+  `Note` text NOT NULL,
+  `TimeStamp` datetime NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `PageID` (`PageID`),
+  KEY `UserID` (`UserID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+CREATE TABLE IF NOT EXISTS `pages` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `URL` varchar(256) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `URL` (`URL`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+CREATE TABLE IF NOT EXISTS `sources` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(128) NOT NULL,
+  `Date` datetime NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+CREATE TABLE IF NOT EXISTS `tags` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `Tag` varchar(64) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `Tag` (`Tag`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+CREATE TABLE IF NOT EXISTS `tags-pages` (
+  `TagID` int(10) NOT NULL,
+  `PageID` int(10) NOT NULL,
+  `UserID` int(10) NOT NULL,
+  `TimeStamp` datetime NOT NULL,
+  KEY `TagID` (`TagID`),
+  KEY `PageID` (`PageID`),
+  KEY `UserID` (`UserID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `tags_batches` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `DateTime` datetime NOT NULL,
+  `TagID` int(11) NOT NULL,
+  `Pages` text NOT NULL,
+  `User` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(64) NOT NULL,
+  PRIMARY KEY (`ID`,`Name`),
+  UNIQUE KEY `Name` (`Name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+CREATE TABLE IF NOT EXISTS `subsites` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subsite_title` varchar(255) NOT NULL,
+  `subsite_short_title` varchar(30) NOT NULL,
+  `subsite_url` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+

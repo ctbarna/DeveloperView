@@ -1,0 +1,96 @@
+/**
+ * CSS
+ */
+
+* html body{ overflow:hidden; }
+# html body{ overflow:hidden; }
+html, body {margin:0; padding:0; overflow:hidden; font-family:Helvetica, Arial, sans-serif; overflow-y: hidden;  -ms-overflow-y: hidden; }
+
+/* IFRAME */
+#main-view {z-index: 0; width:100%; height:100%; margin:0;padding:0;	border:0px solid #fff;}
+
+/* CLEARFIX */
+.clearfix:after { content: ".";	display: block;	clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix {height: 1%;}
+
+/* MENUBAR */
+#menu {	border-top:1px solid #000}
+form {padding:0; margin: 0;}
+
+/* DRAWYER */
+.drawer {	position:absolute;
+			bottom:32px;
+			background:#fff;
+			margin:0px;
+			padding:0px;
+			border:1px solid #999;
+			border-bottom:0px solid #fff;
+}
+
+.drawer h3 {
+			margin:0;
+			padding:0 5px;
+			height:24px;
+			background:#356AA0;
+			color:#fff;
+			font-weight:normal;
+			background-image: url('../img/arrow-up.png');
+			background-position: right center;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+		
+.content {display:none; margin-bottom:10px; padding: 5px 15px 5px 15px; font-size: 12px;}
+
+
+/* FEEDBACK */
+#username-missing {display:none; color: red; font-size: 8pt; font-weight: bold;}
+#loaderdiv{position:absolute; right:60px}
+.loader {display:none; width: 16px; height: 16px; background-image: url('../img/loader.gif') }
+
+/* INSTRUCTIONS */
+.instructions, .note-info {color: #aaa; font-size:8pt;}
+.instructions {margin-top: 10px;}
+.instructions a, .instructions a:visited {color: #aaa; font-size:8pt;}
+.username-missing {display: none; color:red;}
+
+/* BUTTONS */
+.button {border: 1px solid #356AA0; background: #eee;}
+.button:hover {background: #356AA0; color:#eee; border: 1px solid #aaa;}
+
+/* MENU-BAR */
+#menu-bar {font-size: 11px; text-align: center; padding-top: 2px; width: 95%; background: #fff; left: 2%; bottom: -1px; position: absolute; height: 30px; border: 1px solid; #999; border-bottom: none;}
+#menu-bar {background-image: url('../img/loader.gif'); background-repeat: no-repeat; background-position: 10px center}
+#menu-bar #address-div, #menu-bar #user-div {display:inline; margin: 0 25px 0 25px;}
+#menu-bar label {font-weight: bold; padding: 0 5px 0 5px;}
+#menu-bar #url { width: 300px;}
+#menu-bar #url, #menu-bar #username {border: 1px solid #aaa; background: #eee;}
+#username {height: 18px;}
+#user-div {padding: 4px 0 2px 0; border: 1px solid white;}
+#branding {float:right; color: #ccc; font-size: 15px; font-weight: bold; position: absolute; bottom: 6px; right: 14px;}
+
+/* TAGS */
+#tags {left:3%;width:30%;}
+#tags ul { padding: 0; margin: 0;}
+#tags li { display: inline;list-style-type: none;}
+#tags li , #tags li a, #tags li a:visited {color: #fff; }
+#tags li:hover, #tags li:hover a {color: #000; text-decoration: none;}
+#tags li abbr {cursor:help; color: #000;}
+#add-tag {width: 82%; display:inline; float:left;}
+#add-tag-btn { float:right; display: inline; width:10%;}
+
+/* NOTES */
+#notes {	left:34.5%;width:30%;}
+#notes ul {max-height: 300px; overflow: auto; list-style:none; padding: 0; margin: 0 0 10px 0;}
+#notes li {padding-bottom: 15px;}
+#note {width:83%; height: 50px; float:left; display:inline;}
+#add-note-btn {float:right; margin-top: 30px; width:10%;}
+.remove-note-div {float: right; display: inline; display: none;}
+
+/* METADATA */
+#metadata {	left:66%; width:30%;}
+#metadata .label {width: 50%; font-weight:bold; text-align: right; padding-right:10px; display: inline-block; zoom:1; *display: inline; _height: 2em;}
+#metadata .field {width: 40%; display: inline; }
+#metadata #loading {text-align: center; font-style:italic; font-size: 10px; padding-top: 10px; width: 100%;}

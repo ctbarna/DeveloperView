@@ -1,0 +1,97 @@
+DeveloperView API 2.0 Documentation
+
+Usage Note: PageID and URL are interchangeable in all calls.
+
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/add-tag/
+	method: POST
+	data: 
+		'user' => ID of user adding the tag(s)
+		'tags' => Comma separated list of tags (text)
+		'pageID' => ID of page to add tag to
+	returns (JSON):
+		['tag'=>text of tag,'tagID'=>ID of tag]
+
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/add-note/
+	method: POST
+	data:
+		'note' => text of note
+		'user' => ID of user adding the note
+		'pageID' => ID of page to add note to
+	returns (JSON):
+		[noteID]
+
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/remove-tag/
+	method: GET
+	data:
+		'tagID' => ID of tag to remove
+		'pageID' => ID of page to remove tag from
+	returns (JSON):
+		[1] on sucess, [0] on fail
+	
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/remove-note/
+	method: GET
+	data:
+		'noteID' => ID of note to remove
+	returns (JSON):
+		[1] on sucess, [0] on fail	
+		
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/get-analytics/
+	method: GET
+	data:
+		'url' => URL to retrieve analytics data for
+	returns (JSON):
+		[formatted HTML]
+
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/get-pageID/
+	method: GET
+	data:
+		'url' => URL to lookup
+	returns (JSON):
+		[pageID]
+
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/get-tags/
+	method: GET
+	data:
+		'pageID' => ID of page to lookup
+	returns (JSON):
+		[tagID => ['timestamp'=>timestamp,'user'=>UserID,'tag'=>Tag Text]]
+
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/get-notes/
+	method: GET
+	data:
+		'pageID' => ID of page to lookup
+	returns (JSON):
+		[noteID => ['timestamp'=>timestamp,'user'=>UserID,'note'=>Note Text]]
+		
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/get-username/
+	method: GET
+	data:
+		'UserID' => ID of user to lookup
+	returns (JSON):
+		[User's Name]
+
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/get-tag/
+	method: GET
+	data:
+		'TagID' => ID of tag to lookup
+		OR
+		'tag' => text of tag to lookup
+	returns (JSON):
+		[Tag text] OR [tagID]
+		
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/clean-url/
+	method: GET
+	data: 
+		'url' => URL to clean (uniformly returns urls for comparison)
+	returns (JSON):
+		[uniform URL]
+
+ENDPOINT: http://intranet.fcc.gov/fcconline/labs/dv/api/get-user/
+	method: GET
+	data:
+		'user' => name of user to lookup
+	returns (JSON):
+		[userID]
+
+		
+
